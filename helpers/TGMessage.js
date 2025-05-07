@@ -7,13 +7,13 @@ const TGMessage = function (data) {
         message += `<b>${key}: </b>${value || "Не указан"}\n`;
     }
 
-    fetch(process.env.URI_API_TG, {
+    fetch(process.env.NEXT_PUBLIC_URI_API_TG, {
         method: "POST",
         headers: {
             "Content-Type": "application/json;charset=utf-8",
         },
         body: JSON.stringify({
-            chat_id: process.env.CHAT_ID,
+            chat_id: process.env.NEXT_PUBLIC_CHAT_ID,
             parse_mode: "html",
             text: message,
         }),
